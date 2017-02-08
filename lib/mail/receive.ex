@@ -1,12 +1,23 @@
 defmodule Mail.Receive do
   require Logger
+  alias MailtrapClone.Repo
+  alias MailtrapClone.Email
 
   def receive_message(from, to, data) do
     try do
-        Logger.info("Email: Received email, black hole")
-        Logger.info("To: #{to}")
-        Logger.info("From: #{from}")
-        Logger.info("Data: #{data}")
+      changeset = Email.changeset(%Email{}, %{
+        "from": from,
+        "to": inspect(to),
+        "data": data
+      })
+      case Repo.insert(changeset) do
+        {:ok, email} ->
+          Logger.info("email inserted #{inspect(email)}")
+        {:error, changeset} ->
+          Logger.warn("failed email insert #{to} #{inspect(changeset)}")
+        _ ->
+          Logger.warn("wat")
+      end
     catch
       e -> Logger.warn(inspect(e))
     end
