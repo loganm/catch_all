@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>To</th>
+      <th>From</th>
+      <th>Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for email <- @emails do %>
+      <tr>
+        <td><%= email.id %></td>
+        <td><%= email.to %></td>
+        <td><%= email.from %></td>
+        <td><%= email.data %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
