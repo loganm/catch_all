@@ -14,6 +14,10 @@ defmodule MailtrapClone do
       supervisor(MailtrapClone.Endpoint, []),
       # Start your own worker by calling: MailtrapClone.Worker.start_link(arg1, arg2, arg3)
       # worker(MailtrapClone.Worker, [arg1, arg2, arg3]),
+
+      # Start the SMTP server to receive emails
+      worker(:gen_smtp_server, [Mail.SMTPServer,
+        Application.get_env(:mailtrap_clone, :smtp_opts)]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

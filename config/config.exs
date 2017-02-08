@@ -7,7 +7,9 @@ use Mix.Config
 
 # General application configuration
 config :mailtrap_clone,
-  ecto_repos: [MailtrapClone.Repo]
+  ecto_repos: [MailtrapClone.Repo],
+  hashid_salt: "salt",
+  smtp_opts: [[port: 2525, sessionoptions: [certfile: 'server.crt', keyfile: 'server.key']]]
 
 # Configures the endpoint
 config :mailtrap_clone, MailtrapClone.Endpoint,
