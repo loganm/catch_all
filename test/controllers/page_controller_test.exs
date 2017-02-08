@@ -1,5 +1,5 @@
-defmodule MailtrapClone.PageControllerTest do
-  use MailtrapClone.ConnCase
+defmodule CatchAll.PageControllerTest do
+  use CatchAll.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

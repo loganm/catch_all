@@ -1,12 +1,12 @@
-defmodule MailtrapClone.Web do
+defmodule CatchAll.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use MailtrapClone.Web, :controller
-      use MailtrapClone.Web, :view
+      use CatchAll.Web, :controller
+      use CatchAll.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule MailtrapClone.Web do
     quote do
       use Phoenix.Controller
 
-      alias MailtrapClone.Repo
+      alias CatchAll.Repo
       import Ecto
       import Ecto.Query
 
-      import MailtrapClone.Router.Helpers
-      import MailtrapClone.Gettext
+      import CatchAll.Router.Helpers
+      import CatchAll.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule MailtrapClone.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import MailtrapClone.Router.Helpers
-      import MailtrapClone.ErrorHelpers
-      import MailtrapClone.Gettext
+      import CatchAll.Router.Helpers
+      import CatchAll.ErrorHelpers
+      import CatchAll.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule MailtrapClone.Web do
     quote do
       use Phoenix.Channel
 
-      alias MailtrapClone.Repo
+      alias CatchAll.Repo
       import Ecto
       import Ecto.Query
-      import MailtrapClone.Gettext
+      import CatchAll.Gettext
     end
   end
 

@@ -1,4 +1,4 @@
-defmodule MailtrapClone do
+defmodule CatchAll do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -9,27 +9,27 @@ defmodule MailtrapClone do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(MailtrapClone.Repo, []),
+      supervisor(CatchAll.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(MailtrapClone.Endpoint, []),
-      # Start your own worker by calling: MailtrapClone.Worker.start_link(arg1, arg2, arg3)
-      # worker(MailtrapClone.Worker, [arg1, arg2, arg3]),
+      supervisor(CatchAll.Endpoint, []),
+      # Start your own worker by calling: CatchAll.Worker.start_link(arg1, arg2, arg3)
+      # worker(CatchAll.Worker, [arg1, arg2, arg3]),
 
       # Start the SMTP server to receive emails
       worker(:gen_smtp_server, [Mail.SMTPServer,
-        Application.get_env(:mailtrap_clone, :smtp_opts)]),
+        Application.get_env(:catch_all, :smtp_opts)]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: MailtrapClone.Supervisor]
+    opts = [strategy: :one_for_one, name: CatchAll.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    MailtrapClone.Endpoint.config_change(changed, removed)
+    CatchAll.Endpoint.config_change(changed, removed)
     :ok
   end
 end

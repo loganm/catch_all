@@ -1,14 +1,14 @@
-defmodule MailtrapClone.Endpoint do
-  use Phoenix.Endpoint, otp_app: :mailtrap_clone
+defmodule CatchAll.Endpoint do
+  use Phoenix.Endpoint, otp_app: :catch_all
 
-  socket "/socket", MailtrapClone.UserSocket
+  socket "/socket", CatchAll.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :mailtrap_clone, gzip: false,
+    at: "/", from: :catch_all, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,8 +35,8 @@ defmodule MailtrapClone.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_mailtrap_clone_key",
+    key: "_catch_all_key",
     signing_salt: "zHT5+VbB"
 
-  plug MailtrapClone.Router
+  plug CatchAll.Router
 end

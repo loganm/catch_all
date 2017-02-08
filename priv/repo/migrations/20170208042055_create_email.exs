@@ -1,4 +1,4 @@
-defmodule MailtrapClone.Repo.Migrations.CreateEmail do
+defmodule CatchAll.Repo.Migrations.CreateEmail do
   use Ecto.Migration
 
   def change do

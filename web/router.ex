@@ -1,5 +1,5 @@
-defmodule MailtrapClone.Router do
-  use MailtrapClone.Web, :router
+defmodule CatchAll.Router do
+  use CatchAll.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule MailtrapClone.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", MailtrapClone do
+  scope "/", CatchAll do
     pipe_through :browser # Use the default browser stack
 
     get "/", MailController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", MailtrapClone do
+  # scope "/api", CatchAll do
   #   pipe_through :api
   # end
 end

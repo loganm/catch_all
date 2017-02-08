@@ -6,17 +6,17 @@
 use Mix.Config
 
 # General application configuration
-config :mailtrap_clone,
-  ecto_repos: [MailtrapClone.Repo],
+config :catch_all,
+  ecto_repos: [CatchAll.Repo],
   hashid_salt: "salt",
   smtp_opts: [[port: 2525, sessionoptions: [certfile: 'server.crt', keyfile: 'server.key']]]
 
 # Configures the endpoint
-config :mailtrap_clone, MailtrapClone.Endpoint,
+config :catch_all, CatchAll.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "dC7X6RIxsCmn7VCsVmOlO60HldarPT6h6B/f/onZDEXEF9V7QUwUnZDFf3W0g2As",
-  render_errors: [view: MailtrapClone.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: MailtrapClone.PubSub,
+  render_errors: [view: CatchAll.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: CatchAll.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

@@ -1,5 +1,5 @@
-defmodule MailtrapClone.ErrorView do
-  use MailtrapClone.Web, :view
+defmodule CatchAll.ErrorView do
+  use CatchAll.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

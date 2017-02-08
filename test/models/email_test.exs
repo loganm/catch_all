@@ -1,7 +1,7 @@
-defmodule MailtrapClone.EmailTest do
-  use MailtrapClone.ModelCase
+defmodule CatchAll.EmailTest do
+  use CatchAll.ModelCase
 
-  alias MailtrapClone.Email
+  alias CatchAll.Email
 
   @valid_attrs %{data: "some content", from: "some content", to: "some content"}
   @invalid_attrs %{}

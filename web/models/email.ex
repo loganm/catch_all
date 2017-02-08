@@ -1,5 +1,5 @@
-defmodule MailtrapClone.Email do
-  use MailtrapClone.Web, :model
+defmodule CatchAll.Email do
+  use CatchAll.Web, :model
 
   schema "emails" do
     field :to, :string

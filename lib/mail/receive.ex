@@ -1,7 +1,7 @@
 defmodule Mail.Receive do
   require Logger
-  alias MailtrapClone.Repo
-  alias MailtrapClone.Email
+  alias CatchAll.Repo
+  alias CatchAll.Email
 
   def receive_message(from, to, data) do
     try do

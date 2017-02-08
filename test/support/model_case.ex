@@ -1,4 +1,4 @@
-defmodule MailtrapClone.ModelCase do
+defmodule CatchAll.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,20 +16,20 @@ defmodule MailtrapClone.ModelCase do
 
   using do
     quote do
-      alias MailtrapClone.Repo
+      alias CatchAll.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import MailtrapClone.ModelCase
+      import CatchAll.ModelCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MailtrapClone.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CatchAll.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(MailtrapClone.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CatchAll.Repo, {:shared, self()})
     end
 
     :ok
@@ -59,7 +59,7 @@ defmodule MailtrapClone.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&MailtrapClone.ErrorHelpers.translate_error/1)
+    |> Ecto.Changeset.traverse_errors(&CatchAll.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

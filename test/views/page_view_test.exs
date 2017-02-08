@@ -1,3 +1,3 @@
-defmodule MailtrapClone.PageViewTest do
-  use MailtrapClone.ConnCase, async: true
+defmodule CatchAll.PageViewTest do
+  use CatchAll.ConnCase, async: true
 end

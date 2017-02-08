@@ -1,4 +1,4 @@
-# MailtrapClone
+# CatchAll
 
 To start your Phoenix app:
 

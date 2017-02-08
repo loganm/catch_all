@@ -1,4 +1,4 @@
-defmodule MailtrapClone.ConnCase do
+defmodule CatchAll.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -20,23 +20,23 @@ defmodule MailtrapClone.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias MailtrapClone.Repo
+      alias CatchAll.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
-      import MailtrapClone.Router.Helpers
+      import CatchAll.Router.Helpers
 
       # The default endpoint for testing
-      @endpoint MailtrapClone.Endpoint
+      @endpoint CatchAll.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MailtrapClone.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CatchAll.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(MailtrapClone.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CatchAll.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

@@ -1,8 +1,8 @@
-defmodule MailtrapClone.UserSocket do
+defmodule CatchAll.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", MailtrapClone.RoomChannel
+  # channel "room:*", CatchAll.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
@@ -30,7 +30,7 @@ defmodule MailtrapClone.UserSocket do
   # Would allow you to broadcast a "disconnect" event and terminate
   # all active sockets and channels for a given user:
   #
-  #     MailtrapClone.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
+  #     CatchAll.Endpoint.broadcast("users_socket:#{user.id}", "disconnect", %{})
   #
   # Returning `nil` makes this socket anonymous.
   def id(_socket), do: nil

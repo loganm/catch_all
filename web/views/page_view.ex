@@ -1,3 +1,3 @@
-defmodule MailtrapClone.PageView do
-  use MailtrapClone.Web, :view
+defmodule CatchAll.PageView do
+  use CatchAll.Web, :view
 end

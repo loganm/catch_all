@@ -1,3 +1,3 @@
-defmodule MailtrapClone.LayoutView do
-  use MailtrapClone.Web, :view
+defmodule CatchAll.LayoutView do
+  use CatchAll.Web, :view
 end

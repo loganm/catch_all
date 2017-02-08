@@ -1,4 +1,4 @@
 ExUnit.start
 
-Ecto.Adapters.SQL.Sandbox.mode(MailtrapClone.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(CatchAll.Repo, :manual)
 

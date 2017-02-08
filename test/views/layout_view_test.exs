@@ -1,3 +1,3 @@
-defmodule MailtrapClone.LayoutViewTest do
-  use MailtrapClone.ConnCase, async: true
+defmodule CatchAll.LayoutViewTest do
+  use CatchAll.ConnCase, async: true
 end
