@@ -1,0 +1,18 @@
+<h2>Show salesforce org</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @salesforce_org.name %>
+  </li>
+
+  <li>
+    <strong>Org:</strong>
+    <%= @salesforce_org.org_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: salesforce_org_path(@conn, :edit, @salesforce_org) %>
+<%= link "Back", to: salesforce_org_path(@conn, :index) %>

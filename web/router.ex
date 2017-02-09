@@ -16,6 +16,8 @@ defmodule CatchAll.Router do
   scope "/", CatchAll do
     pipe_through :browser # Use the default browser stack
 
+    resources "/orgs", SalesforceOrgController
+    
     get "/", MailController, :index
   end
 

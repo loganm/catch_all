@@ -1,0 +1,28 @@
+<h2>Listing salesforce orgs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Org</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for salesforce_org <- @salesforce_orgs do %>
+    <tr>
+      <td><%= salesforce_org.name %></td>
+      <td><%= salesforce_org.org_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: salesforce_org_path(@conn, :show, salesforce_org), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: salesforce_org_path(@conn, :edit, salesforce_org), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: salesforce_org_path(@conn, :delete, salesforce_org), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New salesforce org", to: salesforce_org_path(@conn, :new) %>

@@ -5,6 +5,7 @@ defmodule CatchAll.Email do
     field :to, :string
     field :from, :string
     field :data, :string
+    belongs_to :salesforce_org, CatchAll.SalesforceOrg
 
     timestamps()
   end
@@ -14,7 +15,7 @@ defmodule CatchAll.Email do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:to, :from, :data])
-    |> validate_required([:to, :from, :data])
+    |> cast(params, [:to, :from, :data, :salesforce_org])
+    |> validate_required([:to, :from, :data, :salesforce_org])
   end
 end

@@ -1,0 +1,6 @@
+<h2>Edit salesforce org</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: salesforce_org_path(@conn, :update, @salesforce_org) %>
+
+<%= link "Back", to: salesforce_org_path(@conn, :index) %>
