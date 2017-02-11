@@ -9,7 +9,7 @@ use Mix.Config
 config :catch_all,
   ecto_repos: [CatchAll.Repo],
   hashid_salt: "salt",
-  smtp_opts: [[port: 2525, sessionoptions: [certfile: 'server.crt', keyfile: 'server.key']]]
+  smtp_opts: [[port: 25, sessionoptions: [certfile: 'server.crt', keyfile: 'server.key']]]
 
 # Configures the endpoint
 config :catch_all, CatchAll.Endpoint,
