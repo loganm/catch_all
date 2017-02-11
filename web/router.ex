@@ -17,8 +17,12 @@ defmodule CatchAll.Router do
     pipe_through :browser # Use the default browser stack
 
     resources "/orgs", SalesforceOrgController
-    
-    get "/", MailController, :index
+
+    get "/orgs/:salesforce_org_id/emails", MailController, :index
+    get "/emails/:email_id", MailController, :show
+    get "/orphan_emails", MailController, :orphans
+
+    get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.

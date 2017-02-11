@@ -4,6 +4,7 @@ defmodule CatchAll.SalesforceOrg do
   schema "salesforce_orgs" do
     field :name, :string
     field :org_id, :string
+    has_many :emails, CatchAll.Email
 
     timestamps()
   end
