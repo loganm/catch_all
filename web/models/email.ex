@@ -15,7 +15,8 @@ defmodule CatchAll.Email do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:to, :from, :data, :salesforce_org])
-    |> validate_required([:to, :from, :data, :salesforce_org])
+    |> cast(params, [:to, :from, :data])
+    |> cast_assoc(:salesforce_org, required: false)
+    |> validate_required([:to, :from, :data])
   end
 end
