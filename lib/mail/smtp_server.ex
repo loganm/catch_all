@@ -49,8 +49,7 @@ defmodule Mail.SMTPServer do
     Logger.info("Mail.SMTPServer.handle_DATA -> to: #{inspect(to)}")
     Logger.info("Mail.SMTPServer.handle_DATA -> data: #{inspect(data)}")
     Logger.info("Mail.SMTPServer.handle_DATA -> state: #{inspect(state)}")
-    Mail.Receive.receive_message(from, to, data)
-    {:ok, UUID.uuid5(:dns, "trineo.com", :default), state}
+    Mail.Receive.receive_message(from, to, data, state)
   end
 
   # --------------------------------------------------------------------------------
