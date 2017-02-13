@@ -40,7 +40,8 @@ defmodule CatchAll.Mixfile do
      {:cowboy, "~> 1.0"},
      {:gen_smtp, "~> 0.11"},
      {:hashids, "~> 2.0"},
-     {:uuid, "~> 1.0"}]
+     {:uuid, "~> 1.0"},
+     {:mailibex, "~> 0.1.2"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
