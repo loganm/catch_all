@@ -1,0 +1,26 @@
+
+<dl class="dl-horizontal">
+    <dt>to</dt><dd><%= @email.to %></dd>
+    <dt>from</dt><dd><%= @email.from %></dd>
+    <dt>data</dt><dd><%= @email.data %></dd>
+    <dt>return_path</dt><dd><%= @email.return_path %></dd>
+    <dt>date</dt><dd><%= @email.date %></dd>
+    <dt>subject</dt><dd><%= @email.subject %></dd>
+    <dt>message_id</dt><dd><%= @email.message_id %></dd>
+    <dt>mime_version</dt><dd><%= @email.mime_version %></dd>
+    <dt>content_type</dt><dd><%= @email.content_type %></dd>
+    <dt>content_transfer_encoding</dt><dd><%= @email.content_transfer_encoding %></dd>
+    <dt>x_sfdc_lk</dt><dd><%= @email.x_sfdc_lk %></dd>
+    <dt>x_sfdc_user</dt><dd><%= @email.x_sfdc_user %></dd>
+    <dt>x_sender</dt><dd><%= @email.x_sender %></dd>
+    <dt>x_mail_abuse_inquiries</dt><dd><%= @email.x_mail_abuse_inquiries %></dd>
+    <dt>x_sfdc_orgtype</dt><dd><%= @email.x_sfdc_orgtype %></dd>
+    <dt>x_sfdcorgrelay</dt><dd><%= @email.x_sfdcorgrelay %></dd>
+    <dt>x_sfdcrelayaddr</dt><dd><%= @email.x_sfdcrelayaddr %></dd>
+    <dt>x_sfdcrelayport</dt><dd><%= @email.x_sfdcrelayport %></dd>
+    <dt>x_sfdctls</dt><dd><%= @email.x_sfdctls %></dd>
+    <dt>x_sfdc_binding</dt><dd><%= @email.x_sfdc_binding %></dd>
+    <dt>x_sfdc_emailcategory</dt><dd><%= @email.x_sfdc_emailcategory %></dd>
+    <dt>x_sfdc_entityid</dt><dd><%= @email.x_sfdc_entityid %></dd>
+    <dt>x_sfdc_interface</dt><dd><%= @email.x_sfdc_interface %></dd>
+</dl>

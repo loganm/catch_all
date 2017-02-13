@@ -13,7 +13,8 @@
         <td><%= email.id %></td>
         <td><%= email.to %></td>
         <td><%= email.from %></td>
-        <td><%= email.data %></td>
+        <td><%= email.subject %></td>
+        <td><%= link "show", to: mail_path(@conn, :show, email.id), class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -8,11 +8,10 @@ defmodule CatchAll.MailController do
     emails = Repo.all(from e in Email, where: e.salesforce_org_id == ^salesforce_org.id)
     render conn, "index.html", emails: emails
   end
-  
-  def show(conn, %{"salesforce_org_id" => salesforce_org_id, "email_id" => email_id}) do
-    salesforce_org = Repo.get(SalesforceOrg, salesforce_org_id)
+
+  def show(conn, %{"email_id" => email_id}) do
     email = Repo.get(Email, email_id)
-    render conn, "index.html", salesforce_org: salesforce_org, email: email
+    render conn, "show.html", email: email
   end
 
   def orphans(conn, _params) do

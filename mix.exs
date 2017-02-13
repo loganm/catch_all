@@ -41,7 +41,7 @@ defmodule CatchAll.Mixfile do
      {:gen_smtp, "~> 0.11"},
      {:hashids, "~> 2.0"},
      {:uuid, "~> 1.0"},
-     {:mailman, "~> 0.1.2"},
+     {:mailibex, "~> 0.1.2"},
      {:codepagex, "~> 0.1.4"}]
   end
 
