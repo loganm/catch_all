@@ -15,12 +15,15 @@ defmodule Mail.Receive do
       org_query = from o in CatchAll.SalesforceOrg, where: o.org_id == ^search_param
       salesforce_orgs = CatchAll.Repo.all(org_query)
 
+      {:raw, body} = email.body
+
       if length(salesforce_orgs) == 1 do
         record = %{
           "data": data,
           "return_path": get_header(email, :"return-path"),
           "date": get_header(email, :date),
           "from": get_header(email, :from),
+          "body": body,
           "to": get_header(email, :to),
           "subject": get_header(email, :subject),
           "message_id": get_header(email, :"message-id"),
@@ -51,10 +54,10 @@ defmodule Mail.Receive do
             {:ok, UUID.uuid5(:dns, "trineo.com", :default), state}
           {:error, changeset} ->
             Logger.warn("failed email insert #{inspect(changeset)}")
-            {:error, "internal systems error"}
+            {:error, "internal systems error", state}
         end
       else
-        {:error, "sf org not recognized"}
+        {:error, "sf org not recognized", state}
       end
     catch
       e -> Logger.warn(inspect(e))

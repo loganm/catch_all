@@ -1,10 +1,12 @@
 defmodule CatchAll.Email do
   use CatchAll.Web, :model
+  alias CatchAll.Header
 
   schema "emails" do
     field :to, :string
     field :from, :string
     field :data, :string
+    field :body, :string
     field :return_path, :string
     field :date, :string
     field :subject, :string
@@ -36,7 +38,7 @@ defmodule CatchAll.Email do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:to, :from, :data, :return_path, :date, :from, :to, :subject, :message_id, :mime_version, :content_type, :content_transfer_encoding, :x_sfdc_lk, :x_sfdc_user, :x_sender, :x_mail_abuse_inquiries, :x_sfdc_orgtype, :x_sfdcorgrelay, :x_sfdcrelayaddr, :x_sfdcrelayport, :x_sfdctls, :x_sfdc_binding, :x_sfdc_emailcategory, :x_sfdc_entityid, :x_sfdc_interface, :salesforce_org_id])
+    |> cast(params, [:to, :from, :data, :body, :return_path, :date, :from, :to, :subject, :message_id, :mime_version, :content_type, :content_transfer_encoding, :x_sfdc_lk, :x_sfdc_user, :x_sender, :x_mail_abuse_inquiries, :x_sfdc_orgtype, :x_sfdcorgrelay, :x_sfdcrelayaddr, :x_sfdcrelayport, :x_sfdctls, :x_sfdc_binding, :x_sfdc_emailcategory, :x_sfdc_entityid, :x_sfdc_interface, :salesforce_org_id])
     |> cast_assoc(:salesforce_org, required: false)
     |> validate_required([:to, :from, :data])
   end

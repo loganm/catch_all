@@ -23,4 +23,5 @@
     <dt>x_sfdc_emailcategory</dt><dd><%= @email.x_sfdc_emailcategory %></dd>
     <dt>x_sfdc_entityid</dt><dd><%= @email.x_sfdc_entityid %></dd>
     <dt>x_sfdc_interface</dt><dd><%= @email.x_sfdc_interface %></dd>
+    <dt>body</dt><dd><%= @email.body %></dd>
 </dl>
