@@ -25,6 +25,7 @@ defmodule CatchAll.Email do
     field :x_sfdc_emailcategory, :string
     field :x_sfdc_entityid, :string
     field :x_sfdc_interface, :string
+    embeds_many :headers, Header
     belongs_to :salesforce_org, CatchAll.SalesforceOrg
 
     timestamps()
